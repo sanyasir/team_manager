@@ -1,0 +1,20 @@
+
+<div style="background-image: url("/home/nani/team_manager/bg.jpg");">
+<table>
+<tr>
+<th>name</th>
+<th>wins</th>
+<th>lossses</th>
+<th>draws</th>
+</tr>
+{% for each_team in team %}
+<tr>
+<td> {{ each_team.name }} </td>
+<td> {{ each_team.win }}</td>
+<td>{{ each_team.loss }}</td>
+<td>{{ each_team.draw }}</td></tr>
+{% endfor %}
+</table>
+<a href="/foodball/add_team">add new team</a>
+</div>
+

@@ -1,0 +1,15 @@
+to start the application you have to start the server first
+
+in team_manager folder use the follouing command
+     
+     python manager.py runserver
+
+after starting the server go the folling URl in any web browser
+
+      http://127.0.0.1:8000/football/  
+
+REqurements: Python, Django, Web Browser
+
+tested and develoeped on linux
+
+tools used : gvim, Google chrome

@@ -1,0 +1,19 @@
+<table border='2'; width='60%' >
+<tr>
+<th>name</th>
+<th>leagues</th>
+</tr>
+{% for t in teams %}
+<tr>
+<td>{{ t.name }}</td>
+<td>
+<ul>
+{% for leag in t.leagues %}
+<li>{{ leag.name }}</li>
+{% endfor %}
+</ul>
+</td></tr>
+{% endfor %}
+</table>
+	
+

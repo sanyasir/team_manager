@@ -1,0 +1,28 @@
+<div style="background-color:#E6E6E6";>
+<h4> Did you have Add teams and Matches for the league ?? </h4>
+<div>
+Add New
+<ul><li><a href="/football/add_team/" class='Button'>Team</a></li>
+<li><a href="/football/add_match/" class='Button'>Match</a></li>
+<li><a href="/football/add_league/" class='Button'>League</a></li>
+<li><a href="/football/add_result/" class='Button'>Match Result</a></li></ul>
+</div>
+<br />
+<ul>
+<li><a href="/football/match/" class='Button'>Click For Matches</a></li>
+<li><a href="/football/team/" class='Button'>Click For Teams</a></li></ul>
+<br />
+<table border="2"; width="50%">
+<tr>
+<th>leagues</th>
+<th>no of teams</th>
+</tr>
+{% for each_league in league %}
+<tr>
+<td> <a href ="/football/league/{{ each_league.league.id }}">{{ each_league.league.name }}</a></td>
+<td> {{ each_league.team_no }}</td></tr>
+{% endfor %}
+</table>
+
+</div>
+

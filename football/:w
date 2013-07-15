@@ -1,0 +1,19 @@
+from django.http import HttpResponse
+from django.shortcuts import render 
+from football.models import Team
+
+def details(request, poll_id):
+    return HttpResponse("You're looking at poll %s." % poll_id)
+
+def index(request):
+    teams = []
+    for each_team in Team.objects.all():
+	print each_team.name
+	teams.append(each_team)
+    context = {'team': teams} 
+    return render(request, 'football/index.html', context)
+
+def add_team(request):
+    return render(request, 'football/index.html',)
+
+

@@ -1,0 +1,39 @@
+<h1>Result</h2>
+{% if msg %}
+ {{ msg }}
+{% else %}
+
+<form action="/football/add_new_result/" method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<table>
+<tr><td><p><label for="name">Match Between</label></td> 
+<td><select name="match">
+  {% for team in matches %}
+    <option value={{ team.id }}>
+	<ul>
+     {% for t in team.teams.all %}
+	<li>{{ t.name }}:</li>
+     {% endfor %}
+       </ul>
+    </option>
+ {% endfor %}
+</select> </td></tr>
+
+<tr><td><p><label for="name">Result</label></td> 
+<td><select name="result">
+ <option value=0>Draw</option>
+  {% for team in teams %}
+    <option value={{ team.id }}>
+	{{ team.name }}
+    </option>
+ {% endfor %}
+</select> </td></tr>
+
+</table>
+<input type="submit" value="Submit" />
+</form>
+<br/>
+<a href='/football/'>BACK</a>
+{% endif %}
+

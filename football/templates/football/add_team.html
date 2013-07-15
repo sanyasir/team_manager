@@ -1,0 +1,16 @@
+<h1>add new team</h2>
+{% if msg %}
+ {{ msg }}
+{% endif %}
+<form action="/football/add_new_team/" method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<table>
+<tr><td><p><label for="name">Team Name:</label></td> 
+<td><input id="name" type="text" name="name" maxlength="100" /></p></td></tr>
+</table>
+<input type="submit" value="Submit" />
+</form>
+<br/>
+<a href='/football/'>BACK</a>
+

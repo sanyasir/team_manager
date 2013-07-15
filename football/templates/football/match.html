@@ -1,0 +1,23 @@
+<table border='2'; width='60%' >
+<tr>
+<th>league</th>
+<th>date</th>
+<th>teams</th>
+<th>Result</th></tr>
+{% for mat in match %}
+<tr>
+<td>{{ mat.league.name }}</td>
+<td>{{ mat.date }}</td>
+<td>
+<ul>
+{% for team in mat.teams %}
+<li>{{ team.name }}</li>
+{% endfor %}
+</ul>
+</td>
+<td>{{ mat.match_result }}</td>
+</tr>
+{% endfor %}
+</table>
+	
+

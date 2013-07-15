@@ -1,0 +1,35 @@
+<h1>add new Match</h2>
+{% if msg %}
+ {{ msg }}
+<br />
+<a href=/football/add_match/>Add Match </a>
+<br />
+<a href=/football/>Back </a>
+
+{% else %}
+
+<form action="/football/add_new_match/" method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<table>
+
+<tr><td><p><label for="name">League Name:</label></td> 
+<td><select name="league">
+  {% for league in leagues %}
+    <option value={{ league.id }}> {{ league.name }}</option>
+ {% endfor %}
+</select> </td></tr>
+
+<tr><td><p><label for="teams">Teams:</label></td> 
+
+<td><select name="teams" multiple="multiple">
+  {% for team in teams %}
+    <option value={{ team.id }}> {{ team.name }}</option>
+ {% endfor %}
+</select> </td></tr>
+
+</table>
+<input type="submit" value="Select" />
+</form>
+{% endif %}
+
